@@ -17,14 +17,22 @@ public class _01_RobotRace {
 		int robX = 100;
 		for(int i = 0; i<robot.length;i++) {
 			robot[i] = new Robot();
-			robot[i].changeRobot("cupcake.jpg");
-			robot[i].setY(450);
+			robot[i].changeRobot("https://4.imimg.com/data4/GF/FM/MY-10106023/pooh-teddy-bear-500x500.jpg");
+			robot[i].setY(550);
 			robot[i].setX(robX+=100);
 		}
 			//4. make each robot start at the bottom of the screen, side by side, facing up
 	
 		//5. use another for loop to iterate through the array and make each robot move 
-	    //   a random amount less than 50.
+	    //   a random amount less than 5
+		Random r = new Random();
+		int y = 0;
+	while (y<10)	
+		for( int x = 0; x< robot.length; x++) {
+			robot[x].move(r.nextInt(5));
+		}
+		y++;
+		}
     	
 		//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
 
@@ -35,4 +43,4 @@ public class _01_RobotRace {
 	    //9. make the robots race around a circular track.
 
 }
-}
+
