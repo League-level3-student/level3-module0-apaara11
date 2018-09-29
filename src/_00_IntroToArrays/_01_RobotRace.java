@@ -18,7 +18,7 @@ public class _01_RobotRace {
 		for(int i = 0; i<robot.length;i++) {
 			robot[i] = new Robot();
 			robot[i].changeRobot("https://4.imimg.com/data4/GF/FM/MY-10106023/pooh-teddy-bear-500x500.jpg");
-			robot[i].setY(550);
+			robot[i].setY(250);
 			robot[i].setX(robX+=100);
 		}
 			//4. make each robot start at the bottom of the screen, side by side, facing up
@@ -26,12 +26,23 @@ public class _01_RobotRace {
 		//5. use another for loop to iterate through the array and make each robot move 
 	    //   a random amount less than 5
 		Random r = new Random();
-		int y = 0;
-	while (y<10)	
+		boolean isRacing  = true;
+	while (isRacing)	
 		for( int x = 0; x< robot.length; x++) {
-			robot[x].move(r.nextInt(5));
+		//	robot[x].move(r.nextInt(10));
+			if(r.nextInt(20) > 10) {
+				robot[x].move(5);
+				robot[x].turn(5);			}
+		int x0 = 100+ (x*100);
+			
+			if(robot[x].getX()> x0-5 && robot[x].getX()<x0+5 && robot[x].getY()<260 && robot[x].getY()> 250) {
+				isRacing = false;
+				JOptionPane.showMessageDialog(null, "robot" + x +" is the winner");
+			}
 		}
-		y++;
+		
+			
+		
 		}
     	
 		//6. use a while loop to repeat step 5 until a robot has reached the top of the screen.
