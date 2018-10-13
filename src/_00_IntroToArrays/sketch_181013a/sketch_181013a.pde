@@ -5,20 +5,20 @@ int[] integers;
 
 void setup() {
   //2. set the size of your window
-  
+size(800,600);
   //  if you are using Processing 3, you cannot use variables
   //  because the developers don't know how programming is supposed to work.
   
 
   //3. initialize your array with the built in width variable
-
+integers= new int[width];
   
   //4. initialize the ints in the array with random numbers
   //   from 0 to the built in height variable
-  
+    //for(int i = 0; i<
 
   //5. call the noStroke() method
-  
+  noStroke();
 }
 
 void draw() {
@@ -54,3 +54,4 @@ void stepSort(int[] arr) {
     }
   }
 }
+2.
