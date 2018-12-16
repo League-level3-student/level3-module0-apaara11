@@ -20,6 +20,6 @@ public class Challenge {
 		for(int i=0; i<numbers.length; i++) {
 			result2= numbers[i]+result2;
 		}
-		System.out.println(result2%array);
+		System.out.println(result2/array);
 	}
 }
